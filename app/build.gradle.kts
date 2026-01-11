@@ -412,6 +412,8 @@ project.dependencies.implementation("com.github.evermind-zz.AppUpdater:app-updat
 // the eventbus
 project.dependencies.implementation("org.greenrobot:eventbus:3.3.1")
 project.dependencies.implementation("com.github.bravepipeproject:extractor:v0.25.2-2.3.4")
+// the logcatviewer
+project.dependencies.implementation("com.github.evermind-zz:logcatviewer:1.0.0")
 
 configurations.all {
     exclude(group = "com.github.TeamNewPipe", module = "NewPipeExtractor")

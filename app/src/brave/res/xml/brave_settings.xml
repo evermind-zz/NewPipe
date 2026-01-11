@@ -80,4 +80,21 @@
             app:iconSpaceReserved="false" />
 
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:layout="@layout/settings_category_header_layout"
+        android:title="@string/brave_settings_category_debug_handling_title"
+        app:singleLineTitle="false"
+        app:iconSpaceReserved="false">
+
+        <Preference
+            android:key="@string/brave_settings_debug_logcat_viewer_key"
+            android:title="@string/brave_settings_debug_logcat_viewer_title"
+            app:singleLineTitle="false"
+            app:iconSpaceReserved="false"
+            android:summary="@string/brave_settings_debug_logcat_viewer_summary">
+            <!-- we launch it via code -->
+        </Preference>
+
+    </PreferenceCategory>
 </PreferenceScreen>

@@ -34,3 +34,10 @@ include (":app")
 //            .using(project(":extractor"))
 //    }
 //}
+
+//includeBuild("../logcatviewer") {
+//    dependencySubstitution {
+//        substitute(module("com.github.evermind-zz:logcatviewer"))
+//            .using(project(":"))
+//    }
+//}

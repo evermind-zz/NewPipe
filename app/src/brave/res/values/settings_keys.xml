@@ -18,4 +18,8 @@
     <!-- end - youtube podcasts feature -->
 
     <string name="brave_settings_handle_cloudflare_challenge_enable_key">brave_settings_handle_cloudflare_challenge_enable_key</string>
+
+    <!-- begin - BraveLogcatMisc config option data -->
+    <string name="brave_settings_debug_logcat_viewer_key">brave_settings_debug_logcat_viewer_key</string>
+    <!-- end - BraveLogcatMisc config option data -->
 </resources>

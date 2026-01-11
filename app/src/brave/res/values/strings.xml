@@ -157,4 +157,12 @@
     <string name="brave_settings_handle_cloudflare_challenge_title">Handle Rumble cloudflare challenge</string>
     <string name="brave_rumble_cf_info">Rumble cloudflare error. Activate this setting if not already enabled: settings → brave settings → Handle Rumble cloudflare challenge</string>
     <!-- end - settings for rumble cloudflare challenge handling -->
+
+    <!-- begin settings debugging -->
+    <string name="brave_settings_category_debug_handling_title">Debug Tools</string>
+
+    <string name="brave_settings_debug_logcat_viewer_title">Logcat Viewer</string>
+    <string name="brave_settings_debug_logcat_viewer_summary">View, filter and share BravePipes logcat output.</string>
+    <!-- end settings debugging -->
+
 </resources>

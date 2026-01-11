@@ -91,6 +91,12 @@ open class BraveAboutFragment : Fragment() {
                 "https://github.com/evermind-zz/slimhls-converter", StandardLicenses.GPL3
             )
         )
+        softwareComponents.add(
+            SoftwareComponent(
+                "logcatviewer", "2017 - 2026", "kyze8439690 (evermind-zz: fork)",
+                "https://github.com/evermind-zz/logcatviewer", StandardLicenses.APACHE2
+            )
+        )
     }
 
     companion object {
