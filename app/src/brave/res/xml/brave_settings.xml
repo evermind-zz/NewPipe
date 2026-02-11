@@ -48,14 +48,6 @@
         app:singleLineTitle="false"
         app:iconSpaceReserved="false" />
 
-    <SwitchPreferenceCompat
-        android:defaultValue="false"
-        android:key="@string/brave_settings_handle_cloudflare_challenge_enable_key"
-        android:summary="@string/brave_settings_handle_cloudflare_challenge_description"
-        android:title="@string/brave_settings_handle_cloudflare_challenge_title"
-        app:singleLineTitle="false"
-        app:iconSpaceReserved="false" />
-
     <PreferenceCategory
         android:layout="@layout/settings_category_header_layout"
         android:title="@string/settings_category_comment_view_handling_title"
@@ -79,6 +71,30 @@
             app:singleLineTitle="false"
             app:iconSpaceReserved="false" />
 
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:layout="@layout/settings_category_header_layout"
+        android:title="@string/brave_settings_handle_cf_challenge_category_title"
+        app:singleLineTitle="false"
+        app:iconSpaceReserved="false">
+
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="@string/brave_settings_handle_cloudflare_challenge_enable_key"
+            android:summary="@string/brave_settings_handle_cf_challenge_description"
+            android:title="@string/brave_settings_handle_cf_challenge_title"
+            app:singleLineTitle="false"
+            app:iconSpaceReserved="false" />
+
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:dependency="@string/brave_settings_handle_cloudflare_challenge_enable_key"
+            android:key="@string/brave_settings_handle_cloudflare_challenge_interactive_enable_key"
+            android:summary="@string/brave_settings_handle_cf_challenge_interactive_description"
+            android:title="@string/brave_settings_handle_cf_challenge_interactive_title"
+            app:singleLineTitle="false"
+            app:iconSpaceReserved="false" />
     </PreferenceCategory>
 
     <PreferenceCategory

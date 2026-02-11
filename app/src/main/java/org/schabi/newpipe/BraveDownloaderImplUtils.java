@@ -3,8 +3,11 @@ package org.schabi.newpipe;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import org.schabi.newpipe.brave.misc.BraveRumble403Interceptor;
-import org.schabi.newpipe.brave.misc.BraveRumbleCloudflareManager;
+import org.schabi.newpipe.brave.feature.challenge.BraveCfChallenge403Interceptor;
+
+import com.github.evermindzz.challengefloatsaway.manager.ChallengeManagerInterface;
+import com.github.evermindzz.challengefloatsaway.manager.ChallengeServiceManager;
+
 import org.schabi.newpipe.extractor.downloader.BraveCookieManager;
 import org.schabi.newpipe.util.image.PicassoHelper;
 
@@ -63,18 +66,24 @@ public final class BraveDownloaderImplUtils {
             final SharedPreferences settings) {
 
         final Optional<Interceptor> rumbleInterceptor =
-                BraveRumble403Interceptor.getInterceptor(builder);
+                BraveCfChallenge403Interceptor.getInterceptor(builder);
         final boolean isHandleCloudflareChallengeEnabled = settings.getBoolean(context.getString(
                 R.string.brave_settings_handle_cloudflare_challenge_enable_key), false);
 
         if (isHandleCloudflareChallengeEnabled) {
             if (rumbleInterceptor.isEmpty()) {
-                final BraveRumbleCloudflareManager manager =
-                        BraveRumbleCloudflareManager.getInstance(context);
-                builder.addInterceptor(new BraveRumble403Interceptor(manager));
+                final ChallengeManagerInterface manager = new ChallengeServiceManager(
+                        App.getApp().getApplicationContext());
+                builder.addInterceptor(new BraveCfChallenge403Interceptor(manager));
             }
         } else {
-            rumbleInterceptor.ifPresent(interceptor -> builder.interceptors().remove(interceptor));
+            rumbleInterceptor.ifPresent(interceptor -> {
+                if (interceptor instanceof BraveCfChallenge403Interceptor) {
+                    ((BraveCfChallenge403Interceptor) interceptor).cleanupBeforeDestroy();
+                }
+                builder.interceptors().remove(interceptor);
+
+            });
 
         }
     }

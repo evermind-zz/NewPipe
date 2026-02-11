@@ -404,8 +404,6 @@ project.dependencies.implementation("com.squareup.okhttp3:okhttp-urlconnection:$
 // for hls support on rumble
 project.dependencies.implementation("com.github.evermind-zz:hlsdownloader:1.0.0")
 project.dependencies.implementation("com.github.evermind-zz:slimhls-converter:1.0.0")
-// rumble cloudflare challenge
-project.dependencies.implementation("com.github.evermind-zz:Cloudflare-Bypass:c4264c53e3")
 // apk upgrade dialog/downloader
 project.dependencies.implementation("com.github.evermind-zz.AppUpdater:app-dialog:1.2.0-1.2.0")
 project.dependencies.implementation("com.github.evermind-zz.AppUpdater:app-updater:1.2.0-1.2.0")
@@ -414,6 +412,8 @@ project.dependencies.implementation("org.greenrobot:eventbus:3.3.1")
 project.dependencies.implementation("com.github.bravepipeproject:extractor:v0.25.2-2.3.4")
 // the logcatviewer
 project.dependencies.implementation("com.github.evermind-zz:logcatviewer:1.0.0")
+// cf challenge helper
+project.dependencies.implementation("com.github.evermind-zz:challengeFloatsAway:1.0.0")
 
 configurations.all {
     exclude(group = "com.github.TeamNewPipe", module = "NewPipeExtractor")

@@ -41,3 +41,10 @@ include (":app")
 //            .using(project(":"))
 //    }
 //}
+
+//includeBuild("../challengeFloatsAway") {
+//    dependencySubstitution {
+//        substitute(module("com.github.evermind-zz:challengeFloatsAway"))
+//            .using(project(":library"))
+//    }
+//}

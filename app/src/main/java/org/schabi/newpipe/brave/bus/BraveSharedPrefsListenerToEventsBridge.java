@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 
 import org.schabi.newpipe.R;
 import org.schabi.newpipe.brave.bus.events.BraveEvents;
+import org.schabi.newpipe.brave.feature.challenge.BraveCfChallengeConfig;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
@@ -12,6 +13,8 @@ import androidx.preference.PreferenceManager;
 
 /**
  * generate Events from some BravePipe specific config options.
+ *
+ * Not limited to EventBus Events
  */
 public class BraveSharedPrefsListenerToEventsBridge
         implements SharedPreferences.OnSharedPreferenceChangeListener {
@@ -32,13 +35,30 @@ public class BraveSharedPrefsListenerToEventsBridge
             postPrefEventScrollOnlyBelowPlayer(prefs);
         } else if (hasPrefChanged(R.string.brave_settings_comment_replies_same_window_key, key)) {
             postPrefEventSameWindowCommentReplies(prefs);
+        } else if (hasPrefChanged(
+                R.string.brave_settings_handle_cloudflare_challenge_interactive_enable_key, key)) {
+            postPrefCloudflareChallengeInteractive(prefs);
         }
+    }
+
+    private void postPrefCloudflareChallengeInteractive(final SharedPreferences prefs) {
+        final boolean isInteractive = prefs.getBoolean(context.getString(
+                        R.string.brave_settings_handle_cloudflare_challenge_interactive_enable_key),
+                false);
+        BraveCfChallengeConfig.INSTANCE.updateFloatingVisible(isInteractive);
+    }
+    private void initPrefCloudflareChallengeInteractive(final SharedPreferences prefs) {
+        final boolean isInteractive = prefs.getBoolean(context.getString(
+                        R.string.brave_settings_handle_cloudflare_challenge_interactive_enable_key),
+                false);
+        BraveCfChallengeConfig.INSTANCE.init(isInteractive);
     }
 
     private void initSharedPrefs() {
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         postPrefEventScrollOnlyBelowPlayer(prefs);
         postPrefEventSameWindowCommentReplies(prefs);
+        initPrefCloudflareChallengeInteractive(prefs);
     }
 
     private void postPrefEventSameWindowCommentReplies(

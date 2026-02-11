@@ -152,11 +152,16 @@
     <string name="channel_tab_podcasts">Podcasts</string>
     <!-- end - youtube podcasts feature -->
 
-    <!-- begin - settings for rumble cloudflare challenge handling -->
-    <string name="brave_settings_handle_cloudflare_challenge_description">Sometimes Rumble needs cloudflare handling via WebView. Cookies are being used.</string>
-    <string name="brave_settings_handle_cloudflare_challenge_title">Handle Rumble cloudflare challenge</string>
-    <string name="brave_rumble_cf_info">Rumble cloudflare error. Activate this setting if not already enabled: settings → brave settings → Handle Rumble cloudflare challenge</string>
-    <!-- end - settings for rumble cloudflare challenge handling -->
+    <!-- begin - settings/info for rumble cloudflare challenge handling -->
+    <string name="brave_rumble_cf_exception_info">Rumble cloudflare error. Activate this setting if not already enabled: settings → brave settings → Handle Rumble cloudflare challenge</string>
+
+    <string name="brave_settings_handle_cf_challenge_category_title">Cloudflare challenge</string>
+    <string name="brave_settings_handle_cf_challenge_description">Sometimes Rumble needs cloudflare handling via WebView. Cookies are being used.</string>
+    <string name="brave_settings_handle_cf_challenge_title">Handle Rumble cloudflare challenge</string>
+
+    <string name="brave_settings_handle_cf_challenge_interactive_description">The window will disappear once a network call was successful.</string>
+    <string name="brave_settings_handle_cf_challenge_interactive_title">Show interactive WebView Floating Window.</string>
+    <!-- end - settings/info for rumble cloudflare challenge handling -->
 
     <!-- begin settings debugging -->
     <string name="brave_settings_category_debug_handling_title">Debug Tools</string>

@@ -273,7 +273,7 @@ class ErrorInfo private constructor(
                     ErrorMessage(R.string.parsing_error)
                 // BravePipe: if enabled BraveRumbleCloudflareManager this Exception is rare
                 throwable is BraveCloudFlareChallengeException ->
-                    ErrorMessage(R.string.brave_rumble_cf_info)
+                    ErrorMessage(R.string.brave_rumble_cf_exception_info)
 
                 // user actions (in case the exception is null or unrecognizable)
                 action == UserAction.UI_ERROR ->
