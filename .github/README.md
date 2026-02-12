@@ -16,6 +16,12 @@ Currently there are 3 variants:
   make it work on SDK 19 aka Kitkat. [BravePipeLegacy](https://github.com/bravenewpipe/BravePipeLegacy)
   is dumped instead. I hope this approach is more reliable and less a burden to maintain.
 
+### APK Info
+This is the SHA fingerprint of BravePipe's signing key to verify downloaded APKs.
+```
+2F:0C:31:D0:7F:70:14:16:B2:94:33:76:49:1C:B1:6E:BB:71:81:56:DE:FC:2B:12:69:AA:C0:4B:94:39:6C:85
+```
+
 ## Contribute
 This fork will focus only on integrating other platforms. Unrelated patches will
 be rejected for now.
@@ -35,11 +41,14 @@ Feel free to suggest which alternative platforms should be included. Any contrib
 - Integrated updater feature. BravePipe will download a new version and act as an installer
   source (you have to allow that). To enable that feature go to:
   `Settings -> 'BravePipe Settings' -> 'Update Behaviour'`
+- option to only scroll comments with fixed video player
+- Debug: Option to collect the Logcat output and share it as a logfile
+- find more in `Settings -> 'BravePipe Settings'`
 
 ## Reporting bugs
-Most problems with BravePipe should be reported to the NewPipeExtractor
+Most problems with BravePipe should be reported to the BravePipeExtractor
 project, as platform support is developed there.
-[Issues](../../../../NewPipeExtractor/issues)
+[Issues](../../../../BravePipeExtractor/issues)
 
 ## Building the project
 Before building any flavor you should (if you want everything to be named BravePipe) call the
